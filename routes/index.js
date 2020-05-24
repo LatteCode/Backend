@@ -1,9 +1,11 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+import * as common from "../commnon";
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", function (req, res, next) {
+  const test = common.makeJson("helloWorld");
+  res.json(test);
 });
 
 module.exports = router;
