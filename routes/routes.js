@@ -3,8 +3,13 @@ import { dbQuery } from "../public/javascripts/db";
 
 /* router */
 module.exports = function(app) {
-    /* full path */
-    app.use("/:kind/:team", query);
+    /*result*/
+    app.use("/result/:department/:team/:job", query);
+
+    /* error handle */
+    app.use("*", (req, res, next) => {
+        next({ errorcode: "404" });
+    });
 
     app.use((err, req, res, next) => {
         console.log(err);
@@ -16,11 +21,15 @@ module.exports = function(app) {
 async function query(req, res) {
     console.log(req.url)
     let {
-        kind, team
+        department, team, job
     } = req.params;
-    let test = common.makeJson(kind+team)
-    let query = "SELECT NOW() as now;"
+    //example : select * from Information where kind=(SELECT idx from Department where college = '공학대학' and Department.department = '행정팀') and name = '기계공학';
+    let query = `select * from Information where kind=(SELECT idx from Department where college = '${department}' and Department.department = '${job}') and name = '${team}';`
+
     let data = await dbQuery(query)
-    console.log(data[0].now)
-    res.json(data[0].now)
+    let result = {...data[0]}
+    console.log(result)
+
+
+    res.json(common.makeJson(result))
 }
