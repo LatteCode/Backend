@@ -1,5 +1,5 @@
 import * as common from "../public/javascripts/commnon";
-import { dbQuery } from "../public/javascripts/db";
+import { dbQuery, pool } from "../public/javascripts/db";
 
 /* router */
 module.exports = function(app) {
@@ -24,8 +24,8 @@ async function query(req, res) {
         department, team, job
     } = req.params;
     //example : select * from Information where kind=(SELECT idx from Department where college = '공학대학' and Department.department = '행정팀') and name = '기계공학';
-    let query = `select * from Information where kind=(SELECT idx from Department where college = '${department}' and Department.department = '${job}') and name = '${team}';`
-
+    let query = `select * from Information where kind=(SELECT idx from Department where college = ${pool.escape(department)} and Department.department = ${pool.escape(job)}) and name = ${pool.escape(team)};`
+    console.log("query : " + query)
     let data = await dbQuery(query)
     let result = {...data[0]}
     console.log(result)
