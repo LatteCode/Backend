@@ -1,5 +1,4 @@
 import * as mysql from "mysql2/promise";
-import * as fs from "fs";
 
 const db_User = process.env['db_user']
 const db_Passwd = process.env['db_passwd']
@@ -37,4 +36,4 @@ const dbQuery = async (query) => {
     }
 };
 
-export { dbQuery }
+export { dbQuery, pool }
