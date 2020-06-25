@@ -1,10 +1,11 @@
 import * as common from "../public/javascripts/commnon";
 import { dbQuery, pool } from "../public/javascripts/db";
 
+
 /* router */
 module.exports = function(app) {
     /*result*/
-    app.use("/result/:department/:team/:job", query);
+    app.use("/result/:department/:team", query);
 
     /* error handle */
     app.use("*", (req, res, next) => {
@@ -21,8 +22,11 @@ module.exports = function(app) {
 async function query(req, res) {
     console.log(req.url)
     let {
-        department, team, job
+        department, team
     } = req.params;
+    let job = req.param('job')
+    console.log(req.params)
+
     //example : select * from Information where kind=(SELECT idx from Department where college = '공학대학' and Department.department = '행정팀') and name = '기계공학';
     let query = `select * from Information where kind=(SELECT idx from Department where college = ${pool.escape(department)} and Department.department = ${pool.escape(job)}) and name = ${pool.escape(team)};`
     console.log("query : " + query)

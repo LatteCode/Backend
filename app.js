@@ -1,8 +1,12 @@
 const express = require("express");
 const app = express();
 const helmet = require("helmet");
+const bodyparser = require("body-parser");
 
 app.use(helmet());
+
+app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.json())
 
 /*middle ware*/
 app.use(express.static(__dirname + "/public"));
