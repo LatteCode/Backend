@@ -1,5 +1,5 @@
 Backend
-<img src="![GitHub top language](https://img.shields.io/github/languages/top/lattecode/backend)"></img>
+![GitHub top language](https://img.shields.io/github/languages/top/lattecode/backend)
 ![GitHub](https://img.shields.io/github/license/LatteCode/Backend)
 =======================================================================================
 This a backend of our project by team LatteCode.
@@ -73,14 +73,17 @@ You should follow the form below.
 
 ## Disclaimer
 
-## Contributors
+### License
+![MIT](https://github.com/AntsThatWander/Backend/blob/master/LICENSE)
+
+### Contributors
 * Code
     1. Yeonggyun Kim([CXZ7720](https://zerogyun.dev))
 
 * Extra
     1. Jeonghyeop Lim([AntsThatWander](https://antsthatwander.github.io/)) - README
 
-## Link to Frontend
+### Link to Frontend
 * Go to [Frontend](https://github.com/LatteCode/Frontend)
 
 
