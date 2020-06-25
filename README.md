@@ -1,7 +1,8 @@
-Backend
+# Backend
 ![GitHub top language](https://img.shields.io/github/languages/top/lattecode/backend)
 ![GitHub](https://img.shields.io/github/license/LatteCode/Backend)
-=======================================================================================
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/LatteCode/Backend.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LatteCode/Backend/context:javascript)
+
 This a backend of our project by team [LatteCode](https://github.com/LatteCode).
 
 
@@ -26,10 +27,36 @@ API would be this form, /result/{department}/{team}?job={job}
 http://server.jaram.net:5905/result/주변기관/식당?job=포지타노
 ```
 ## For Developer
+### Environment
+1. node > v12.11
+2. yarn > 1.22
+3. MariaDB > 10.4.13
 
-### Build
+### Installation
+1. RUN SQL script to build DB server.
+`lattecode_Department.sql`, `lattecode_Information.sql`
+
+2.  Hosting local machine
+You should cast db login info as a environment variables. : `db_user`, `db_passwd`
+```
+git clone https://github.com/LatteCode/Backend.git
+cd Backend
+
+yarn install
+yarn serve   ----> For development preview server
+-------------
+yarn build   ----> For Release build that has minified bundle dependencies.
+```
+3. Hosting as Docker Container
+```
+docker build -t JohnDoe/Backend .
+docker run -p 3000:3000 -d --name lattecode-backend -e db_user="user" -e db_passwd="PASSWD" JohnDoe/Backend
+```
+
 
 ### Requirements
+Most of our dependencies are written in `package.json`.
+They will be automatically installed while `yarn install`.
 
 #### Dependencies
 1. cookie-parser ~1.4.4
@@ -44,32 +71,8 @@ http://server.jaram.net:5905/result/주변기관/식당?job=포지타노
 ### How to Contribute
 
 #### Pull Request
-You should follow the form below.
-
-##### 개요(outline)
-이번 PR은 ~~~의 문제를 해결합니다.   
-(This PR is for solving problem of ~~~)
-
-##### 작업사항(Work)
-* 파일명1 : 세부수정사항1   
-* 파일명2 : 세부수정사항2
-* (File name 1 : modification detail 1)   
-* (File name 2 : modification detail 2)
-
-##### 변경로직
-로직 A가 디바이스@에서 렌더링 문제가 생기는 것을 B로 바꾸어 해결함   
-(Solve rendering problem in device @ by change logic A into logic B)
-
-##### 변경전
-핵심 코드 스니펫 또는 캡쳐사진(Files change view 활용)   
-(main code snippets or capture-using files change view)
-
-##### 변경후
-핵심 코드 스니펫 또는 캡쳐사진(Files change view 활용)   
-(main code snippets or capture-using files change view)
-
-##### 기타(Etc.)
-* 기타 참고사항(Etc.)
+We have added PR template and Issue templates.
+Every PRs and Issues should fill out these templates. If it didn't, your ticket will be rejected.
 
 ## Disclaimer
 
