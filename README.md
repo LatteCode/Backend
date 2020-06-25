@@ -2,7 +2,7 @@ Backend
 ![GitHub top language](https://img.shields.io/github/languages/top/lattecode/backend)
 ![GitHub](https://img.shields.io/github/license/LatteCode/Backend)
 =======================================================================================
-This a backend of our project by team LatteCode.
+This a backend of our project by team [LatteCode](https://github.com/LatteCodehttps://github.com/LatteCode).
 
 
 ## Table of Contents
