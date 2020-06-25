@@ -74,7 +74,7 @@ You should follow the form below.
 ## Disclaimer
 
 ### License
-![MIT](https://github.com/AntsThatWander/Backend/blob/master/LICENSE)
+[MIT](https://github.com/AntsThatWander/Backend/blob/master/LICENSE)
 
 ### Contributors
 * Code
