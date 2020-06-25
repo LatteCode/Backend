@@ -28,7 +28,7 @@ async function query(req, res) {
     console.log(req.params)
 
     //example : select * from Information where kind=(SELECT idx from Department where college = '공학대학' and Department.department = '행정팀') and name = '기계공학';
-    let query = `select * from Information where kind=(SELECT idx from Department where college = ${pool.escape(department)} and Department.department = ${pool.escape(job)}) and name = ${pool.escape(team)};`
+    let query = `select * from Information where kind=(SELECT idx from Department where college = ${pool.escape(department)} and Department.department = ${pool.escape(team)}) and name = ${pool.escape(job)};`
     console.log("query : " + query)
     let data = await dbQuery(query)
     let result = {...data[0]}
