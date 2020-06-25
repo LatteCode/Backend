@@ -2,7 +2,7 @@ Backend
 ![GitHub top language](https://img.shields.io/github/languages/top/lattecode/backend)
 ![GitHub](https://img.shields.io/github/license/LatteCode/Backend)
 =======================================================================================
-This a backend of our project by team [LatteCode](https://github.com/LatteCodehttps://github.com/LatteCode).
+This a backend of our project by team [LatteCode](https://github.com/LatteCode).
 
 
 ## Table of Contents
@@ -74,7 +74,7 @@ You should follow the form below.
 ## Disclaimer
 
 ### License
-[MIT](https://github.com/AntsThatWander/Backend/blob/master/LICENSE)
+* [MIT](https://github.com/AntsThatWander/Backend/blob/master/LICENSE)
 
 ### Contributors
 * Code
